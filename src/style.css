@@ -1,0 +1,387 @@
+:root {
+  --main-height: 86vh;
+  --black: rgb(33, 33, 33);
+}
+@font-face {
+  font-family: "Escoredream";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Escoredream";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Escoredream";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff")
+    format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Escoredream";
+}
+
+.main-templates ul {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+img {
+  transform: scale(0.6);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.most-top-nav {
+  padding: 10px;
+  background: var(--black);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px 20px 0px 20px;
+  font-size: large;
+}
+
+.main-templates {
+  height: var(--main-height);
+  width: 30vw;
+  padding: 0px 10x 0px 20px;
+}
+.main-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-title .main-refresh-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.main-title .main-refresh-button:hover {
+  background: rgb(213, 213, 213);
+}
+.main-title .main-plus-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.main-title .main-plus-button:hover {
+  background: rgb(213, 213, 213);
+}
+.template-buttons {
+  height: 100%;
+  overflow-y: auto;
+}
+.template-buttons li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+  margin: 2px 0px 2px 0px;
+
+  border: solid 1px rgba(71, 71, 71, 0.664);
+  border-radius: 3px;
+
+  font-size: large;
+  font-family: "Escoredream";
+}
+.template-buttons li:hover {
+  background: rgb(243, 243, 243);
+}
+.template-buttons li div {
+  display: flex;
+  justify-content: center;
+}
+.modify-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  margin-right: 5px;
+}
+.modify-button:hover {
+  background: rgb(213, 213, 213);
+}
+.delete-button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.delete-button:hover {
+  background: rgb(213, 213, 213);
+}
+.template-buttons li span {
+  margin-left: 10px;
+}
+
+.main-descriptions {
+  height: var(--main-height);
+  width: 35vw;
+  min-width: 0;
+  padding: 0px 10px 0px 10px;
+}
+.main-title .copy-button {
+  height: 23px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+.main-title .copy-button span {
+  display: block;
+  font-size: small;
+  padding-left: 5px;
+}
+.main-title .copy-button img {
+  height: 30px;
+  width: 30px;
+}
+.code-area {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border: solid 1px var(--black);
+}
+.main-results {
+  height: var(--main-height);
+  width: 35vw;
+  min-width: 0;
+  padding: 0px 10px 0px 10px;
+}
+.main-labels {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.result-values {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  border: solid 1px var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 수정 모달 */
+.modify-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modify-modal .modal-popup {
+  width: 70%;
+  height: 70vh;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-popup h2 {
+  display: flex;
+  align-items: center;
+}
+.modal-popup img {
+  height: 1em;
+  width: auto;
+  transform: scale(1);
+
+  margin: 0px 10px 0px 3px;
+
+  vertical-align: middle;
+}
+.modal-popup .modal-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-popup .modal-header button {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.modal-popup .modal-header button:hover {
+  background: rgb(213, 213, 213);
+}
+.modal-popup .modal-header button img {
+  margin: 0;
+}
+.modify-preview {
+  height: 100%;
+  min-height: 0;
+  margin-bottom: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modify-code-area {
+  resize: none;
+  width: 49%;
+  border: solid 1px var(--black);
+}
+.modify-results {
+  width: 49%;
+}
+.modify-result-values {
+  width: 100%;
+  height: 100%;
+  border: solid 1px var(--black);
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.modify-modal button {
+  width: 100%;
+  height: 40px;
+  margin: 2px 0px 2px 0px;
+  font-size: large;
+  font-family: "Escoredream";
+}
+
+/* 추가 모달 */
+.plus-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plus-modal .modal-popup {
+  width: 70%;
+  height: 70vh;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.plus-template-title-input {
+  font-family: "Escoredream";
+  font-size: large;
+  height: 40px;
+  margin: 0 0 5px 0;
+}
+.plus-preview {
+  height: 100%;
+  min-height: 0;
+  margin-bottom: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.plus-code-area {
+  resize: none;
+  width: 49%;
+  border: solid 1px var(--black);
+}
+.plus-results {
+  width: 49%;
+}
+.plus-result-values {
+  width: 100%;
+  height: 100%;
+  border: solid 1px var(--black);
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.plus-modal button {
+  width: 100%;
+  height: 40px;
+  margin: 2px 0px 2px 0px;
+  font-size: large;
+  font-family: "Escoredream";
+}
+
+/* 특수 */
+.none {
+  display: none;
+}
+
+.markdown-body img {
+  transform: scale(1);
+
+  pointer-events: auto;
+  user-select: auto;
+  -webkit-user-drag: auto;
+}
