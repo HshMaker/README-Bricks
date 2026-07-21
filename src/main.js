@@ -13,7 +13,31 @@ let templateList = [
   },
   {
     label: "implementation",
-    body: "### 구현 방법\n\n짧은 설명이 필요하면 작성합니다.\n\n```\n실행할 코드\n```\n",
+    body: "### 구현 방법\n\n짧은 설명이 필요하면 작성합니다.\n\n```bash\nnpm install [package]\n```\n",
+  },
+  {
+    label: "table",
+    body: "| 제목      | 내용            | 설명        |\r\n| :-------- | :------------- | :---------- |\r\n| **Table** | table template | description |\r\n",
+  },
+  {
+    label: "hyperlink",
+    body: "[github/Hshmaker](https://github.com/HshMaker)",
+  },
+  {
+    label: "toggle",
+    body: `<details>
+  <summary>여기를 클릭하여 내용을 펼치세요.</summary>
+  <div markdown="1">
+
+  여기에 펼쳐질 상세 내용이나 코드를 작성합니다.
+  이미지나 리스트도 자유롭게 넣을 수 있습니다.
+
+  </div>
+</details>`,
+  },
+  {
+    label: "image",
+    body: `![로고](/favicon.ico)`,
   },
 ];
 
