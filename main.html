@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>README Bricks | 간편하고 빠른 README.md 파일 만들기</title>
+  </head>
+  <body>
+    <nav class="most-top-nav">
+      <span class="main-title">README Bricks</span>
+    </nav>
+    <div id="app">
+      <div class="main-templates">
+        <div class="main-title">
+          <span class="main-labels">Templates</span>
+          <div>
+            <button class="main-refresh-button">
+              <img src="src/assets/refresh.svg" />
+            </button>
+            <button class="main-plus-button">
+              <img src="src/assets/multiple.svg" />
+            </button>
+          </div>
+        </div>
+        <ul class="template-buttons">
+          <li id="title-and-description">
+            <span>제목 및 설명</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+          <li id="implementation">
+            <span>구현 방법</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+          <li id="table">
+            <span>테이블</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+          <li id="hyperlink">
+            <span>하이퍼링크</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+          <li id="toggle">
+            <span>펼치기/접기</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+          <li id="image">
+            <span>이미지</span>
+            <div>
+              <!-- <button id="delete" class="delete-button">
+                <img src="src/assets/minus.svg" />
+              </button> -->
+              <button id="modify" class="modify-button">
+                <img src="src/assets/modify.svg" />
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="main-descriptions">
+        <div class="main-title">
+          <span class="main-labels">Codes</span>
+          <button id="copy-button" class="main-plus-button copy-button">
+            <span>Copy</span>
+            <img src="src/assets/copy.svg" />
+          </button>
+        </div>
+        <div class="code-area"></div>
+      </div>
+      <div class="main-results">
+        <span class="main-labels">Results</span>
+        <article class="result-values markdown-body"></article>
+      </div>
+    </div>
+
+    <!-- modify modal -->
+    <div class="modify-modal none">
+      <div class="modal-popup">
+        <div class="modal-header">
+          <h2><img src="src/assets/modify.svg" /></h2>
+          <button><img src="src/assets/cross.svg" /></button>
+        </div>
+        <div class="modify-preview">
+          <div class="modify-code-area"></div>
+          <div class="modify-results">
+            <article class="modify-result-values markdown-body"></article>
+          </div>
+        </div>
+        <button id="save-and-close">저장 후 닫기</button>
+      </div>
+    </div>
+    <!-- modify modal end-->
+    <!-- plus modal -->
+    <div class="plus-modal none">
+      <div class="modal-popup">
+        <div class="modal-header">
+          <h2><img src="src/assets/multiple.svg" />커스텀 템플릿</h2>
+          <button><img src="src/assets/cross.svg" /></button>
+        </div>
+        <input
+          type="text"
+          id="template-title"
+          class="plus-template-title-input"
+          placeholder="템플릿 명칭을 입력하세요"
+        />
+        <div class="plus-preview">
+          <div class="plus-code-area"></div>
+          <div class="plus-results">
+            <article class="plus-result-values markdown-body"></article>
+          </div>
+        </div>
+        <button id="save-and-close">추가하기</button>
+      </div>
+    </div>
+    <!-- plus modal end -->
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/codes.js"></script>
+  </body>
+</html>
