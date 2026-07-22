@@ -60,6 +60,8 @@ const plusEditor = createPlusEditor();
 
 templateButtons.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
+    if (!modifyModal.classList.contains("none")) return;
+
     const li = e.target.closest("li");
     switch (e.target.id) {
       case "modify": // 여기는 수정 구현 공간
@@ -131,7 +133,8 @@ refreshButton.addEventListener("click", () => {
 
   if (!reallyDoIt) return;
 
-  templateList = templateSavings;
+  templateList = JSON.parse(JSON.stringify(templateSavings));
+
   // 커스텀 삭제 로직 (초기화 전용)
   for (let i = templateButtons.children.length - 1; i >= 0; i--) {
     const liElement = templateButtons.children[i];
@@ -139,10 +142,14 @@ refreshButton.addEventListener("click", () => {
       deleteTemplate(liElement.id);
     }
   }
+
   saveToLocalStorage();
 });
+
 // 이거는 추가 버튼
-plusButton.addEventListener("click", () => {
+plusButton.addEventListener("click", (e) => {
+  if (!modifyModal.classList.contains("none")) return;
+  if (!plusModal.classList.contains("none")) return;
   plusModal.classList.remove("none");
 
   const plusTitleInput = plusModal.firstElementChild.children[1];
