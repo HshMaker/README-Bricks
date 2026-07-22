@@ -17,7 +17,7 @@ let templateList = [
   },
   {
     label: "table",
-    body: "| 제목      | 내용            | 설명        |\r\n| :-------- | :------------- | :---------- |\r\n| **Table** | table template | description |\r\n",
+    body: "\n| 제목      | 내용            | 설명        |\r\n| :-------- | :------------- | :---------- |\r\n| **Table** | table template | description |\r\n",
   },
   {
     label: "hyperlink",
@@ -37,7 +37,7 @@ let templateList = [
   },
   {
     label: "image",
-    body: `![로고](/favicon.ico)`,
+    body: `![로고](/README-Bricks/favicon.ico)`,
   },
 ];
 
